@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/activity_main"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/live"
+        android:layout_margin="15dp"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="直播"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+       />
+
+    <Button
+        android:id="@+id/vod"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="点播"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="@+id/live"
+        app:layout_constraintTop_toBottomOf="@+id/live" />
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/category"
+        android:text="分类"
+        app:layout_constraintLeft_toLeftOf="@+id/vod"
+        app:layout_constraintTop_toBottomOf="@+id/vod"
+        />
+
+    <Button
+        android:id="@+id/detail"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="详情"
+        app:layout_constraintLeft_toLeftOf="@+id/category"
+        app:layout_constraintTop_toBottomOf="@+id/category" />
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/lookback"
+        android:text="回看"
+        android:visibility="gone"
+        app:layout_constraintLeft_toRightOf="@+id/live"
+        app:layout_constraintTop_toTopOf="@+id/live"
+        />
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/timeshift"
+        android:text="时移"
+        android:visibility="gone"
+        app:layout_constraintLeft_toRightOf="@+id/lookback"
+        app:layout_constraintTop_toTopOf="@+id/lookback"
+        />
+
+    <Button
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/category_1"
+        android:text="分类一"
+        app:layout_constraintLeft_toRightOf="@+id/category"
+        app:layout_constraintTop_toTopOf="@+id/category"
+        />
+    <Button
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/category_2"
+        android:text="分类二"
+        app:layout_constraintLeft_toRightOf="@+id/category_1"
+        app:layout_constraintTop_toTopOf="@+id/category_1"
+        />
+
+    <Button
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/detail_1"
+        android:text="姥姥的饺子馆"
+        app:layout_constraintLeft_toRightOf="@+id/detail"
+        app:layout_constraintTop_toTopOf="@+id/detail"
+        />
+    <Button
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/detail_2"
+        android:text="大毒枭"
+        app:layout_constraintLeft_toRightOf="@+id/detail_1"
+        app:layout_constraintTop_toTopOf="@+id/detail_1"
+        />
+
+    <EditText
+        android:id="@+id/detail_pram"
+        android:layout_width="500dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:hint="programId"
+        android:singleLine="true"
+        android:enabled="false"
+        app:layout_constraintBottom_toBottomOf="@+id/detail_2"
+        app:layout_constraintLeft_toRightOf="@+id/detail_2"
+        app:layout_constraintTop_toTopOf="@+id/detail_2" />
+    <EditText
+        android:id="@+id/category_pram"
+        android:layout_width="500dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:hint="categoryId"
+        android:enabled="false"
+        app:layout_constraintBottom_toBottomOf="@+id/category_2"
+        app:layout_constraintLeft_toRightOf="@+id/category_2"
+        app:layout_constraintTop_toTopOf="@+id/category_2" />
+    <TextView
+        android:id="@+id/info"
+        android:layout_width="500dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:hint="categoryId"
+        app:layout_constraintLeft_toLeftOf="@+id/detail"
+        app:layout_constraintTop_toBottomOf="@+id/detail" />
+
+
+</android.support.constraint.ConstraintLayout>
