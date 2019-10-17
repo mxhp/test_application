@@ -1,8 +1,11 @@
 package com.xhp.testutils;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Handler;
+import android.os.Message;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -15,6 +18,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.lang.ref.WeakReference;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -33,6 +38,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private String detail_prammter;
     private String category_prammter;
     private TextView mInfo;
+    private Button mStartapp;
+    private MyHandler myHandler = new MyHandler(this);
+    private Button mShanxi;
+    private Button mHuacheng;
+    private Button mSuixinkan;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,12 +110,56 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mDetail2.setOnClickListener(this);
         mInfo = findViewById(R.id.info);
         mInfo.setText("" +
-                ""+ Environment.getExternalStorageDirectory().getPath()+"/n"+"getFilesDir"+this.getFilesDir().getPath());
+                "" + Environment.getExternalStorageDirectory().getPath() + "/n" + "getFilesDir" + this.getFilesDir().getPath());
+        mStartapp = findViewById(R.id.startApp);
+        mStartapp.setOnClickListener(this);
+        mShanxi = findViewById(R.id.shanxi);
+        mHuacheng = findViewById(R.id.huacheng);
+        mSuixinkan = findViewById(R.id.suixinkan);
+        mShanxi.setOnClickListener(this);
+        mHuacheng.setOnClickListener(this);
+        mSuixinkan.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            case R.id.startApp:
+                Intent startApp = new Intent();
+                startApp.setClassName("com.sumavision.ivideoforstb.shanxi",
+                        "com.sumavision.ivideoforstb.activity.RouteActivity");
+                startApp.putExtra("type", 5);
+                startApp.putExtra("categoryId", "");
+                startApp.putExtra("categoryName", "优点专区");
+                startActivity(startApp);
+                break;
+            case R.id.shanxi:
+                Intent shanxi = new Intent();
+                shanxi.setClassName("com.sumavision.ivideoforstb.shanxi",
+                        "com.sumavision.ivideoforstb.activity.RouteActivity");
+                shanxi.putExtra("type", 5);
+                shanxi.putExtra("categoryId", "");
+                shanxi.putExtra("categoryName", "");
+                startActivity(shanxi);
+                break;
+            case R.id.huacheng:
+                Intent huacheng = new Intent();
+                huacheng.setClassName("com.sumavision.ivideoforstb.shanxi",
+                        "com.sumavision.ivideoforstb.activity.RouteActivity");
+                huacheng.putExtra("type", 5);
+                huacheng.putExtra("categoryId", "d50f1539f67adf5a");
+                huacheng.putExtra("categoryName", "华城专区");
+                startActivity(huacheng);
+                break;
+            case R.id.suixinkan:
+                Intent suixinkan = new Intent();
+                suixinkan.setClassName("com.sumavision.ivideoforstb.shanxi",
+                        "com.sumavision.ivideoforstb.activity.RouteActivity");
+                suixinkan.putExtra("type", 5);
+                suixinkan.putExtra("categoryId", "3c4d80aa3f0b2454");
+                suixinkan.putExtra("categoryName", "随心看专区");
+                startActivity(suixinkan);
+                break;
             case R.id.live:
                 Intent liveintent = new Intent();
                 liveintent.setClassName("com.sumavision.ivideoforstb.sichuan.prefecture", "com.sumavision.ivideoforstb.activity.RouteActivity");
@@ -181,6 +235,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 detail_prammter = "Wenguang_19051516454979245000_package";
                 mDetailPram.setText(detail_prammter);
                 break;
+        }
+    }
+
+    /**
+     * 防止内存泄漏的handler对象
+     */
+    private static class MyHandler extends Handler {
+        private WeakReference<Context> contextWeakReference;
+
+        public MyHandler(Context context) {
+            this.contextWeakReference = new WeakReference<>(context);
+        }
+
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
         }
     }
 }
