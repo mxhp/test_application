@@ -11,6 +11,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -19,7 +20,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.yanzhenjie.permission.Action;
+import com.yanzhenjie.permission.AndPermission;
+import com.yanzhenjie.permission.runtime.Permission;
+
 import java.lang.ref.WeakReference;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -49,6 +55,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initViews();
+        initPermission();
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -60,6 +67,35 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         .setAction("Action", null).show();
             }
         });
+    }
+
+    private void initPermission() {
+        AndPermission.with(this).runtime().permission(Permission.WRITE_EXTERNAL_STORAGE)
+                .onDenied(new Action<List<String>>() {
+                    @Override
+                    public void onAction(List<String> data) {
+                        Log.i("AndPermission", "内存 onDenied" + data.toString());
+                        Toast.makeText(MainActivity.this, "失败", Toast.LENGTH_LONG).show();
+                    }
+                }).onGranted(new Action<List<String>>() {
+            @Override
+            public void onAction(List<String> data) {
+                Log.i("AndPermission", "内存 onGranted" + data.toString());
+                Toast.makeText(MainActivity.this, "成功", Toast.LENGTH_LONG).show();
+            }
+        }).start();
+        AndPermission.with(this).runtime().permission(Permission.RECORD_AUDIO)
+                .onDenied(new Action<List<String>>() {
+                    @Override
+                    public void onAction(List<String> data) {
+                        Log.i("AndPermission", "语音 onDenied" + data.toString());
+                    }
+                }).onGranted(new Action<List<String>>() {
+                    @Override
+                    public void onAction(List<String> data) {
+                        Log.i("AndPermission", "语音 onGranted" + data.toString());
+                    }
+                }).start();
     }
 
     @Override
