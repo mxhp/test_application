@@ -6,13 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".business.StartActivity">
 
-    <TextView
+    <ImageView
         android:id="@+id/do_something"
-        android:layout_width="100dp"
-        android:layout_height="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:gravity="center"
-        android:text="Let's dance"
-        android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
