@@ -3,6 +3,7 @@ package com.xhp.testutils.business;
 import android.animation.TimeInterpolator;
 import android.animation.ValueAnimator;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
@@ -12,10 +13,6 @@ import android.widget.Toast;
 
 import com.xhp.testutils.R;
 import com.xhp.testutils.base.BaseActivity;
-
-import static java.lang.Math.PI;
-import static java.lang.Math.pow;
-import static java.lang.Math.sin;
 
 public class StartActivity extends BaseActivity {
 
@@ -28,12 +25,13 @@ public class StartActivity extends BaseActivity {
     }
 
     @Override
-    protected void initView(Context context) {
+    protected void initView() {
         mDoSomething = findViewById(R.id.do_something);
         mDoSomething.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(StartActivity.this, "click here", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(StartActivity.this,PlayerActivity.class));
             }
         });
         ViewTreeObserver viewTreeObserver = mDoSomething.getViewTreeObserver();

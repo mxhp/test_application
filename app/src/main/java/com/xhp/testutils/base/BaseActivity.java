@@ -33,13 +33,13 @@ public abstract class BaseActivity extends AppCompatActivity {
         if (immersibeEffect) {
             StatusBarUtil.immersive(this);
         }
-        initView(this);
+        initView();
         initData(this);
     }
 
     protected abstract int getLayoutId();
 
-    protected abstract void initView(Context context);
+    protected abstract void initView();
 
     protected abstract void initData(Context context);
 
