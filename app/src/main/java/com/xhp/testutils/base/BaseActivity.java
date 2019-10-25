@@ -7,12 +7,17 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.xhp.testutils.base.utils.ActivityUtils;
 import com.xhp.testutils.base.utils.StatusBarUtil;
+import com.xhp.testutils.contract.BaseContract;
+import com.xhp.testutils.presenter.BasePresenter;
 
-public abstract class BaseActivity extends AppCompatActivity {
+public abstract class BaseActivity<P extends BasePresenter> extends AppCompatActivity implements BaseContract.BaseView {
 
     private boolean showActionBar = false;
 
     private boolean immersibeEffect = false;
+
+    public  P mPresenter ;
+
 
     public void setShowActionBar(boolean showActionBar) {
         this.showActionBar = showActionBar;
@@ -33,9 +38,15 @@ public abstract class BaseActivity extends AppCompatActivity {
         if (immersibeEffect) {
             StatusBarUtil.immersive(this);
         }
+        mPresenter = createPresenter();
+        if (mPresenter!=null) {
+            mPresenter.attachView(this);
+        }
         initView();
         initData(this);
     }
+
+    protected abstract P createPresenter();
 
     protected abstract int getLayoutId();
 
@@ -67,6 +78,23 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        mPresenter.detachView();
+        mPresenter = null;
         ActivityUtils.getInstance().remove(this);
+    }
+
+    @Override
+    public void showLoading() {
+
+    }
+
+    @Override
+    public void showError(int code, String errorMsg) {
+
+    }
+
+    @Override
+    public void hideLoading(){
+
     }
 }

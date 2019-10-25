@@ -1,6 +1,5 @@
 package com.xhp.testutils.presenter;
 
-import com.xhp.testutils.contract.StartContract;
 import com.xhp.testutils.view.BaseView;
 
 public class StartPresenter implements StartContract.Presenter {
