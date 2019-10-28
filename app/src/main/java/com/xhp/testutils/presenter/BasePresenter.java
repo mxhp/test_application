@@ -21,6 +21,18 @@ public abstract class BasePresenter<V extends BaseContract.BaseView, M extends B
     }
 
     /**
+     * 返回 Date Model
+     * @return DataModel
+     */
+    public synchronized WeakReference<M> getNetEngin(){
+        if(null==mNetEnginRef||null==mNetEnginRef.get()){
+            mNetEnginRef=new WeakReference<M>(createEngin());
+        }
+        return mNetEnginRef;
+    }
+
+
+    /**
      * 创建model
      *
      * @return

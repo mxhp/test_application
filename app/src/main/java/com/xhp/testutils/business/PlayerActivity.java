@@ -6,10 +6,16 @@ import com.dueeeke.videocontroller.StandardVideoController;
 import com.dueeeke.videoplayer.player.VideoView;
 import com.xhp.testutils.R;
 import com.xhp.testutils.base.BaseActivity;
+import com.xhp.testutils.presenter.BasePresenter;
 
 public class PlayerActivity extends BaseActivity {
 
     private VideoView videoView;
+
+    @Override
+    protected BasePresenter createPresenter() {
+        return null;
+    }
 
     @Override
     protected int getLayoutId() {
