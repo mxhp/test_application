@@ -71,6 +71,7 @@ public class StartActivity extends BaseActivity<StartPresenter> implements Start
     public void gotoMain() {
         Intent intent =new Intent(getBaseContext(), MainActivity.class);
         startActivity(intent);
+        finish();
     }
 
     @Override
