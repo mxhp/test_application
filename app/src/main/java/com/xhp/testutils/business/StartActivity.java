@@ -13,6 +13,8 @@ import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
 import com.xhp.testutils.MainActivity;
 import com.xhp.testutils.R;
+import com.xhp.testutils.TestA;
+import com.xhp.testutils.TestActivity;
 import com.xhp.testutils.base.BaseActivity;
 import com.xhp.testutils.contract.StartContract;
 import com.xhp.testutils.presenter.StartPresenter;
@@ -69,7 +71,10 @@ public class StartActivity extends BaseActivity<StartPresenter> implements Start
 
     @Override
     public void gotoMain() {
-        Intent intent =new Intent(getBaseContext(), MainActivity.class);
+        Intent intent =new Intent(getBaseContext(), TestActivity.class);
+        Bundle bundle = new Bundle();
+        TestA testA = new TestA("LILI","two",12);
+        bundle.writeToParcel(testA,);
         startActivity(intent);
         finish();
     }
