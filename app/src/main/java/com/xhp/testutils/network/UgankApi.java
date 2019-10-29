@@ -10,7 +10,7 @@ import retrofit2.http.Path;
 
 public interface UgankApi {
 
-    @GET("data/{category}/{number}/{pag}")
+    @GET("data/{category}/{number}/{page}")
     Call<Category> getCategoryDate(@Path("category") String category, @Path("number") int number, @Path("page") int page);
 
     @GET("random/data/福利/{number}")

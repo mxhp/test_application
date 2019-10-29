@@ -4,6 +4,17 @@ import java.util.List;
 
 public class HotBean {
 
+    @Override
+    public String toString() {
+        return "HotBean{" +
+                "count=" + count +
+                ", total=" + total +
+                ", nextPageUrl='" + nextPageUrl + '\'' +
+                ", adExist=" + adExist +
+                ", itemList=" + itemList +
+                '}';
+    }
+
     /**
      * itemList : [{"type":"video","data":{"dataType":"VideoBeanForClient","id":165769,"title":"巴西淘汰阿根廷！梅西：阿利森怎么老是你！","description":"连续三次淘汰梅西！阿利森你换个马甲我照样认得你！","library":"DEFAULT","tags":[{"id":1022,"name":"运动","actionUrl":"eyepetizer://tag/1022/?title=%E8%BF%90%E5%8A%A8","adTrack":null,"desc":"冲浪、滑板、健身、跑酷，我过着停不下来的生活","bgPicture":"http://img.kaiyanapp.com/cb87116785473e4064687036b53b5af3.jpeg?imageMogr2/quality/60/format/jpg","headerImage":"http://img.kaiyanapp.com/481837cc0b1c52a3a87d6156d52cfdfa.jpeg?imageMogr2/quality/60/format/jpg","tagRecType":"NORMAL","childTagList":null,"childTagIdList":null,"communityIndex":0},{"id":1030,"name":"足球巴西","actionUrl":"eyepetizer://tag/1030/?title=%E8%B6%B3%E7%90%83%E5%B7%B4%E8%A5%BF","adTrack":null,"desc":null,"bgPicture":"http://img.kaiyanapp.com/493ed1adcf28d6481a78912472ae2cc2.png?imageMogr2/quality/60/format/jpg","headerImage":"http://img.kaiyanapp.com/493ed1adcf28d6481a78912472ae2cc2.png?imageMogr2/quality/60/format/jpg","tagRecType":"NORMAL","childTagList":null,"childTagIdList":null,"communityIndex":0},{"id":308,"name":"足球","actionUrl":"eyepetizer://tag/308/?title=%E8%B6%B3%E7%90%83","adTrack":null,"desc":null,"bgPicture":"http://img.kaiyanapp.com/e56fe02615c6ddf7c6a206b4c5b014bc.jpeg?imageMogr2/quality/60/format/jpg","headerImage":"http://img.kaiyanapp.com/e56fe02615c6ddf7c6a206b4c5b014bc.jpeg?imageMogr2/quality/60/format/jpg","tagRecType":"NORMAL","childTagList":null,"childTagIdList":null,"communityIndex":0}],"consumption":{"collectionCount":15,"shareCount":0,"replyCount":0},"resourceType":"video","slogan":null,"provider":{"name":"PGC","alias":"PGC","icon":""},"category":"运动","author":{"id":2952,"icon":"http://img.kaiyanapp.com/e50306ce612769166f7577350a37047f.png?imageMogr2/quality/60/format/jpg","name":"骚客","description":"最好玩的体育短视频","link":"","latestReleaseTime":1572271409000,"videoNum":348,"adTrack":null,"follow":{"itemType":"author","itemId":2952,"followed":false},"shield":{"itemType":"author","itemId":2952,"shielded":false},"approvedNotReadyVideoCount":0,"ifPgc":true,"recSort":0,"expert":false},"cover":{"feed":"http://img.kaiyanapp.com/8467dc38487c57a9e70e206982ac64a3.png?imageMogr2/quality/60/format/jpg","detail":"http://img.kaiyanapp.com/8467dc38487c57a9e70e206982ac64a3.png?imageMogr2/quality/60/format/jpg","blurred":"http://img.kaiyanapp.com/bad7a5b4632701805651bf320108b0f4.jpeg?imageMogr2/quality/60/format/jpg","sharing":null,"homepage":null},"playUrl":"http://baobab.kaiyanapp.com/api/v1/playUrl?vid=165769&resourceType=video&editionType=default&source=aliyun&playUrlType=url_oss","thumbPlayUrl":null,"duration":195,"webUrl":{"raw":"http://www.eyepetizer.net/detail.html?vid=165769","forWeibo":"http://www.eyepetizer.net/detail.html?vid=165769&resourceType=video&utm_campaign=routine&utm_medium=share&utm_source=weibo&uid=0"},"releaseTime":1562206924000,"playInfo":[{"height":480,"width":854,"urlList":[{"name":"aliyun","url":"http://baobab.kaiyanapp.com/api/v1/playUrl?vid=165769&resourceType=video&editionType=normal&source=aliyun&playUrlType=url_oss","size":34958941},{"name":"qcloud","url":"http://baobab.kaiyanapp.com/api/v1/playUrl?vid=165769&resourceType=video&editionType=normal&source=qcloud&playUrlType=url_oss","size":34958941},{"name":"ucloud","url":"http://baobab.kaiyanapp.com/api/v1/playUrl?vid=165769&resourceType=video&editionType=normal&source=ucloud&playUrlType=url_oss","size":34958941}],"name":"标清","type":"normal","url":"http://baobab.kaiyanapp.com/api/v1/playUrl?vid=165769&resourceType=video&editionType=normal&source=aliyun&playUrlType=url_oss"},{"height":720,"width":1280,"urlList":[{"name":"aliyun","url":"http://baobab.kaiyanapp.com/api/v1/playUrl?vid=165769&resourceType=video&editionType=high&source=aliyun&playUrlType=url_oss","size":58256761},{"name":"qcloud","url":"http://baobab.kaiyanapp.com/api/v1/playUrl?vid=165769&resourceType=video&editionType=high&source=qcloud&playUrlType=url_oss","size":58256761},{"name":"ucloud","url":"http://baobab.kaiyanapp.com/api/v1/playUrl?vid=165769&resourceType=video&editionType=high&source=ucloud&playUrlType=url_oss","size":58256761}],"name":"高清","type":"high","url":"http://baobab.kaiyanapp.com/api/v1/playUrl?vid=165769&resourceType=video&editionType=high&source=aliyun&playUrlType=url_oss"}],"campaign":null,"waterMarks":null,"ad":false,"adTrack":[],"type":"NORMAL","titlePgc":"巴西淘汰阿根廷！梅西：阿利森怎么老是你！","descriptionPgc":"连续三次淘汰梅西！阿利森你换个马甲我照样认得你！","remark":"","ifLimitVideo":false,"searchWeight":0,"brandWebsiteInfo":null,"idx":0,"shareAdTrack":null,"favoriteAdTrack":null,"webAdTrack":null,"date":1562206924000,"promotion":null,"label":null,"labelList":[],"descriptionEditor":"","collected":false,"played":false,"subtitles":[],"lastViewTime":null,"playlists":null,"src":null},"tag":null,"id":0,"adIndex":-1}]
      * count : 1
@@ -72,6 +83,17 @@ public class HotBean {
         private Object tag;
         private int id;
         private int adIndex;
+
+        @Override
+        public String toString() {
+            return "ItemListBean{" +
+                    "type='" + type + '\'' +
+                    ", data=" + data +
+                    ", tag=" + tag +
+                    ", id=" + id +
+                    ", adIndex=" + adIndex +
+                    '}';
+        }
 
         public String getType() {
             return type;
@@ -207,6 +229,57 @@ public class HotBean {
             private List<?> adTrack;
             private List<?> labelList;
             private List<?> subtitles;
+
+            @Override
+            public String toString() {
+                return "DataBean{" +
+                        "dataType='" + dataType + '\'' +
+                        ", id=" + id +
+                        ", title='" + title + '\'' +
+                        ", description='" + description + '\'' +
+                        ", library='" + library + '\'' +
+                        ", consumption=" + consumption +
+                        ", resourceType='" + resourceType + '\'' +
+                        ", slogan=" + slogan +
+                        ", provider=" + provider +
+                        ", category='" + category + '\'' +
+                        ", author=" + author +
+                        ", cover=" + cover +
+                        ", playUrl='" + playUrl + '\'' +
+                        ", thumbPlayUrl=" + thumbPlayUrl +
+                        ", duration=" + duration +
+                        ", webUrl=" + webUrl +
+                        ", releaseTime=" + releaseTime +
+                        ", campaign=" + campaign +
+                        ", waterMarks=" + waterMarks +
+                        ", ad=" + ad +
+                        ", type='" + type + '\'' +
+                        ", titlePgc='" + titlePgc + '\'' +
+                        ", descriptionPgc='" + descriptionPgc + '\'' +
+                        ", remark='" + remark + '\'' +
+                        ", ifLimitVideo=" + ifLimitVideo +
+                        ", searchWeight=" + searchWeight +
+                        ", brandWebsiteInfo=" + brandWebsiteInfo +
+                        ", idx=" + idx +
+                        ", shareAdTrack=" + shareAdTrack +
+                        ", favoriteAdTrack=" + favoriteAdTrack +
+                        ", webAdTrack=" + webAdTrack +
+                        ", date=" + date +
+                        ", promotion=" + promotion +
+                        ", label=" + label +
+                        ", descriptionEditor='" + descriptionEditor + '\'' +
+                        ", collected=" + collected +
+                        ", played=" + played +
+                        ", lastViewTime=" + lastViewTime +
+                        ", playlists=" + playlists +
+                        ", src=" + src +
+                        ", tags=" + tags +
+                        ", playInfo=" + playInfo +
+                        ", adTrack=" + adTrack +
+                        ", labelList=" + labelList +
+                        ", subtitles=" + subtitles +
+                        '}';
+            }
 
             public String getDataType() {
                 return dataType;

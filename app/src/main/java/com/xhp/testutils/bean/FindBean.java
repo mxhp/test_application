@@ -32,6 +32,21 @@ public class FindBean {
         this.id = id;
     }
 
+    @Override
+    public String toString() {
+        return "FindBean{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", alias=" + alias +
+                ", description='" + description + '\'' +
+                ", bgPicture='" + bgPicture + '\'' +
+                ", bgColor='" + bgColor + '\'' +
+                ", headerImage='" + headerImage + '\'' +
+                ", defaultAuthorId=" + defaultAuthorId +
+                ", tagId=" + tagId +
+                '}';
+    }
+
     public String getName() {
         return name;
     }
