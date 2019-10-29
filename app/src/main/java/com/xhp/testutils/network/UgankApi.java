@@ -1,12 +1,10 @@
 package com.xhp.testutils.network;
 
-import android.database.Observable;
 
 import com.xhp.testutils.bean.Category;
 import com.xhp.testutils.bean.SearchResult;
 
 import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
 
