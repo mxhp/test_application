@@ -3,7 +3,9 @@ package com.xhp.testutils;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class TestB implements Parcelable {
+import java.io.Serializable;
+
+public class TestB implements Parcelable , Serializable {
     String name;
     String grade;
     int age;

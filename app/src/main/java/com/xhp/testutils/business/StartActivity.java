@@ -73,8 +73,6 @@ public class StartActivity extends BaseActivity<StartPresenter> implements Start
     public void gotoMain() {
         Intent intent =new Intent(getBaseContext(), TestActivity.class);
         Bundle bundle = new Bundle();
-        TestA testA = new TestA("LILI","two",12);
-        bundle.writeToParcel(testA,);
         startActivity(intent);
         finish();
     }
