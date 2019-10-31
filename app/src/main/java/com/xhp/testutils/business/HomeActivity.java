@@ -1,14 +1,19 @@
 package com.xhp.testutils.business;
 
 import android.content.Context;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v4.view.ViewPager;
+import android.widget.TextView;
 
 import com.xhp.testutils.R;
 import com.xhp.testutils.base.BaseActivity;
 import com.xhp.testutils.presenter.BasePresenter;
 
 public class HomeActivity extends BaseActivity {
+
+    private ViewPager mViewPage;
+    private TextView mMusicBtnMusic;
+    private TextView mMusicBtnVideo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +32,9 @@ public class HomeActivity extends BaseActivity {
 
     @Override
     protected void initView() {
-
+        mViewPage = findViewById(R.id.view_page);
+        mMusicBtnMusic = findViewById(R.id.music_btn_music);
+        mMusicBtnVideo = findViewById(R.id.music_btn_video);
     }
 
     @Override

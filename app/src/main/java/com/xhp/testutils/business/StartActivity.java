@@ -9,11 +9,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestListener;
-import com.bumptech.glide.request.target.Target;
-import com.xhp.testutils.MainActivity;
 import com.xhp.testutils.R;
-import com.xhp.testutils.TestA;
 import com.xhp.testutils.TestActivity;
 import com.xhp.testutils.base.BaseActivity;
 import com.xhp.testutils.contract.StartContract;
@@ -53,20 +49,7 @@ public class StartActivity extends BaseActivity<StartPresenter> implements Start
 
     @Override
     public void showStartImage(String string) {
-        Glide.with(getBaseContext()).load(string).listener(new RequestListener(){
-
-            @Override
-            public boolean onException(Exception e, Object model, Target target, boolean isFirstResource) {
-//                gotoMain();
-                return false;
-            }
-
-            @Override
-            public boolean onResourceReady(Object resource, Object model, Target target, boolean isFromMemoryCache, boolean isFirstResource) {
-//                gotoMain();
-                return false;
-            }
-        }).into(mDoSomething);
+        Glide.with(getBaseContext()).load(string).into(mDoSomething);
     }
 
     @Override
