@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.xhp.testutils.MainActivity;
 import com.xhp.testutils.R;
 import com.xhp.testutils.TestActivity;
 import com.xhp.testutils.base.BaseActivity;
@@ -54,7 +55,7 @@ public class StartActivity extends BaseActivity<StartPresenter> implements Start
 
     @Override
     public void gotoMain() {
-        Intent intent =new Intent(getBaseContext(), TestActivity.class);
+        Intent intent =new Intent(getBaseContext(), HomeActivity.class);
         Bundle bundle = new Bundle();
         startActivity(intent);
         finish();

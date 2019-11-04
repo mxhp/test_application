@@ -78,8 +78,10 @@ public abstract class BaseActivity<P extends BasePresenter> extends AppCompatAct
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        mPresenter.detachView();
-        mPresenter = null;
+        if (mPresenter!=null) {
+            mPresenter.detachView();
+            mPresenter = null;
+        }
         ActivityUtils.getInstance().remove(this);
     }
 

@@ -1,5 +1,4 @@
 package com.xhp.testutils.base;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -7,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.google.gson.Gson;
 import com.xhp.testutils.contract.BaseContract;
 import com.xhp.testutils.presenter.BasePresenter;
 
@@ -15,13 +13,17 @@ public abstract class BaseFragment<P extends BasePresenter> extends Fragment imp
 
     protected P mPresenter;
     protected abstract int getLayoutID();
-    protected abstract void initViews();
+    protected abstract void initViews(View view);
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
+        initBundle();
         return inflater.inflate(getLayoutID(),null,false);
+    }
+
+    protected void initBundle() {
     }
 
     @Override
@@ -31,7 +33,7 @@ public abstract class BaseFragment<P extends BasePresenter> extends Fragment imp
         if(null!=mPresenter){
             mPresenter.attachView(this);
         }
-        initViews();
+        initViews(view);
     }
 
     /**
