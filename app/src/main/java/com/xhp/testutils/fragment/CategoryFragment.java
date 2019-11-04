@@ -3,6 +3,7 @@ package com.xhp.testutils.fragment;
 import android.os.Bundle;
 import android.view.View;
 
+import com.xhp.testutils.R;
 import com.xhp.testutils.base.BaseFragment;
 import com.xhp.testutils.presenter.BasePresenter;
 
@@ -30,7 +31,7 @@ public class CategoryFragment extends BaseFragment {
 
     @Override
     protected int getLayoutID() {
-        return 0;
+        return R.layout.fragment_category;
     }
 
     @Override
