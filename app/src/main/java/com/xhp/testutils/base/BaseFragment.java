@@ -34,7 +34,12 @@ public abstract class BaseFragment<P extends BasePresenter> extends Fragment imp
             mPresenter.attachView(this);
         }
         initViews(view);
+        initData();
     }
+
+    protected void initData(){
+
+    };
 
     /**
      * 交由子类实现自己指定的Presenter,可以为空
