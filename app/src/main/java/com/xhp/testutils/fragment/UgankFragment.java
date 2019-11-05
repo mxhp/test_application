@@ -76,7 +76,7 @@ public class UgankFragment extends BaseFragment {
         fragments.add(frontFragment);
         fragments.add(referenceFragment);
         fragments.add(resFragment);
-
+        infoPagerAdapter.setFragmentList(fragments);
         mViewpager.setAdapter(infoPagerAdapter);
         mTabs.setupWithViewPager(mViewpager);
         mViewpager.setCurrentItem(1);

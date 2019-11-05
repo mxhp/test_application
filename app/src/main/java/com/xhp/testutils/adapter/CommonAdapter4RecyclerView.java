@@ -35,7 +35,7 @@ public abstract class CommonAdapter4RecyclerView<T> extends RecyclerView.Adapter
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
         CommonHolder4RecyclerView commonHolder = (CommonHolder4RecyclerView) viewHolder;
-        commonHolder.position = i;
+        commonHolder.position = viewHolder.getAdapterPosition();
         convert(commonHolder, mDatas.get(i));
     }
 

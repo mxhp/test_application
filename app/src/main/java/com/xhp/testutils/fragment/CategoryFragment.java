@@ -50,6 +50,7 @@ public class CategoryFragment extends BaseFragment<CategoryPresenter> implements
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         mRecycleview.setLayoutManager(layoutManager);
+        mRecycleview.setAdapter(mCategoryAdapter);
 //        mRecycleview.setRefreshProgressStyle(ProgressStyle.BallSpinFadeLoader);
 //        mRecycleview.setLoadingMoreProgressStyle(ProgressStyle.BallClipRotate);
 //        mRecycleview.setLoadingListener(new XRecyclerView.LoadingListener() {
