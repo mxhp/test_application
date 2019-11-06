@@ -39,8 +39,8 @@ dependencies {
     implementation 'com.squareup.retrofit2:retrofit:2.0.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.0.0'
     implementation 'com.github.bumptech.glide:glide:3.7.0'
-//    implementation 'com.jcodecraeer:xrecyclerview:1.6.0'
-//    implementation 'com.github.GrenderG:Toasty:1.4.2'
+    implementation 'com.jcodecraeer:xrecyclerview:1.6.0'
+    implementation 'com.github.GrenderG:Toasty:1.4.2'
 
     //可选，包含StandardVideoController的实现
     implementation 'com.github.dueeeke.dkplayer:dkplayer-ui:3.1.4'

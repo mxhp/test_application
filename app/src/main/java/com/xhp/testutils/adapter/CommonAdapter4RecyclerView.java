@@ -24,6 +24,10 @@ public abstract class CommonAdapter4RecyclerView<T> extends RecyclerView.Adapter
         this.mDatas = datas;
     }
 
+    public List<T> getDatas() {
+        return this.mDatas;
+    }
+
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
@@ -35,7 +39,7 @@ public abstract class CommonAdapter4RecyclerView<T> extends RecyclerView.Adapter
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
         CommonHolder4RecyclerView commonHolder = (CommonHolder4RecyclerView) viewHolder;
-        commonHolder.position = viewHolder.getAdapterPosition();
+        commonHolder.position = i;
         convert(commonHolder, mDatas.get(i));
     }
 

@@ -7,9 +7,13 @@ public interface CategoryContract {
 
     interface View extends BaseContract.BaseView {
         void loadCategoryData(Category category);
+
+        String getCategoryName();
+
+        void loadMoreCategoryData(Category category) ;
     }
 
     interface Presenter<V> extends BaseContract.BasePresenter<V> {
-       void getCategoryData(String categoryName,int number,int page);
+       void getCategoryData(boolean isFresh);
     }
 }
