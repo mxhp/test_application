@@ -11,6 +11,7 @@ public interface CategoryContract {
         String getCategoryName();
 
         void loadMoreCategoryData(Category category) ;
+
     }
 
     interface Presenter<V> extends BaseContract.BasePresenter<V> {

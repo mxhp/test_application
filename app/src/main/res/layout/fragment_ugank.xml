@@ -45,11 +45,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:background="@color/colorTextBlack"
-            app:tabIndicatorColor="@color/colorAccent"
-            app:tabIndicatorHeight="4dp"
+            android:background="@android:color/white"
+            app:tabIndicatorColor="@color/colorTextBlack"
+            app:tabIndicatorHeight="1dp"
             app:tabSelectedTextColor="#000"
-            app:tabTextColor="#000" />
+            app:tabMode="scrollable"
+            app:tabTextColor="@color/colorPrimaryDark" />
     </android.support.design.widget.AppBarLayout>
 
     <android.support.v4.view.ViewPager
