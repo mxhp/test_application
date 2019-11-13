@@ -2,13 +2,13 @@ package com.xhp.testutils.fragment;
 
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
-import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.kekstudio.dachshundtablayout.DachshundTabLayout;
 import com.xhp.testutils.R;
 import com.xhp.testutils.adapter.HomeViewPager;
 import com.xhp.testutils.base.BaseFragment;
@@ -24,7 +24,7 @@ public class UgankFragment extends BaseFragment {
     private ImageView mBackdrop;
     private Toolbar mToolbar;
     private CollapsingToolbarLayout mCollapsing;
-    private TabLayout mTabs;
+    private DachshundTabLayout mTabs;
     private AppBarLayout mActionBar;
     private ViewPager mViewpager;
     private CategoryFragment appFragment, androidFragment, iOSFragment, frontFragment, resFragment, referenceFragment;
