@@ -4,30 +4,42 @@ import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.support.v7.widget.AppCompatImageView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
+import com.bumptech.glide.Glide;
 import com.kekstudio.dachshundtablayout.DachshundTabLayout;
 import com.xhp.testutils.R;
 import com.xhp.testutils.adapter.HomeViewPager;
 import com.xhp.testutils.base.BaseFragment;
+import com.xhp.testutils.bean.Category;
+import com.xhp.testutils.network.DataManager;
 import com.xhp.testutils.presenter.BasePresenter;
 import com.xhp.testutils.util.GankConstant;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class UgankFragment extends BaseFragment {
+import es.dmoral.toasty.Toasty;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+public class UgankFragment extends BaseFragment implements View.OnClickListener{
 
 
-    private ImageView mBackdrop;
+    private ImageView mBeauty;
     private Toolbar mToolbar;
     private CollapsingToolbarLayout mCollapsing;
     private DachshundTabLayout mTabs;
     private AppBarLayout mActionBar;
     private ViewPager mViewpager;
     private CategoryFragment appFragment, androidFragment, iOSFragment, frontFragment, resFragment, referenceFragment;
+    private LinearLayout mSearchView;
+    private AppCompatImageView mCollectView,mSettingView;
 
     @Override
     protected int getLayoutID() {
@@ -37,12 +49,19 @@ public class UgankFragment extends BaseFragment {
     @Override
     protected void initViews(View view) {
 
-        mBackdrop = view.findViewById(R.id.backdrop);
+        mBeauty = view.findViewById(R.id.backdrop);
         mToolbar = view.findViewById(R.id.toolbar);
         mCollapsing = view.findViewById(R.id.collapsing);
         mTabs = view.findViewById(R.id.tabs);
         mActionBar = view.findViewById(R.id.action_bar);
         mViewpager = view.findViewById(R.id.viewpager);
+        mSearchView = view.findViewById(R.id.ll_home_search);
+        mCollectView= view.findViewById(R.id.iv_home_collection);
+        mSettingView= view.findViewById(R.id.iv_home_setting);
+        mSettingView.setOnClickListener(this);
+        mBeauty.setOnClickListener(this);
+        mSearchView.setOnClickListener(this);
+        mCollectView.setOnClickListener(this);
     }
 
     @Override
@@ -91,5 +110,35 @@ public class UgankFragment extends BaseFragment {
     @Override
     public void hideLoading() {
 
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.backdrop:
+                DataManager.getGankApi().getRandomBeauties(1).enqueue(new Callback<Category>() {
+                    @Override
+                    public void onResponse(Call<Category> call, Response<Category> response) {
+                        String url =((Category)(response.body())).results.get(0).url;
+                        Glide.with(getContext()).load(url).into(mBeauty);
+                    }
+
+                    @Override
+                    public void onFailure(Call<Category> call, Throwable t) {
+
+                    }
+                });
+                break;
+            case R.id.ll_home_search:
+                Toasty.info(getContext(),"search").show();
+                break;
+            case R.id.iv_home_collection:
+                Toasty.info(getContext(),"collect").show();
+                break;
+            case R.id.iv_home_setting:
+                Toasty.info(getContext(),"setting").show();
+                break;
+
+        }
     }
 }
