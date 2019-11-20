@@ -2,18 +2,14 @@ package com.xhp.testutils.adapter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.Toast;
-
 import com.bumptech.glide.Glide;
 import com.xhp.testutils.R;
 import com.xhp.testutils.bean.Category;
 import com.xhp.testutils.business.WebActvity;
 import com.xhp.testutils.util.DateUtil;
 
-import es.dmoral.toasty.Toasty;
 
 
 public class CategoryAdater extends CommonAdapter4RecyclerView<Category.ResultsBean> {
