@@ -20,8 +20,8 @@ import java.util.List;
 public class HomeActivity extends BaseActivity {
 
     private ViewPager mViewPage;
-    private TextView mMusicBtnMusic;
-    private TextView mMusicBtnVideo;
+    private TextView mGank;
+    private TextView mKaiyan;
     private List<Fragment> fragments;
     private UgankFragment Ugank;
     private KaiyanFragment Kaiyan;
@@ -45,27 +45,27 @@ public class HomeActivity extends BaseActivity {
     @Override
     protected void initView() {
         mViewPage = findViewById(R.id.view_page);
-        mMusicBtnMusic = findViewById(R.id.music_btn_music);
-        mMusicBtnVideo = findViewById(R.id.music_btn_video);
+        mGank = findViewById(R.id.music_btn_music);
+        mKaiyan = findViewById(R.id.music_btn_video);
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 switch (v.getId()) {
                     case R.id.music_btn_music:
                         mViewPage.setCurrentItem(0);
-                        mMusicBtnMusic.setSelected(true);
-                        mMusicBtnVideo.setSelected(false);
+                        mGank.setSelected(true);
+                        mKaiyan.setSelected(false);
                         break;
                     case R.id.music_btn_video:
                         mViewPage.setCurrentItem(1);
-                        mMusicBtnMusic.setSelected(false);
-                        mMusicBtnVideo.setSelected(true);
+                        mGank.setSelected(false);
+                        mKaiyan.setSelected(true);
                         break;
                 }
             }
         };
-        mMusicBtnVideo.setOnClickListener(listener);
-        mMusicBtnMusic.setOnClickListener(listener);
+        mKaiyan.setOnClickListener(listener);
+        mGank.setOnClickListener(listener);
         mViewPage.setOffscreenPageLimit(1);
         mViewPage.setOverScrollMode(View.OVER_SCROLL_NEVER);
         mViewPage.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
@@ -77,11 +77,11 @@ public class HomeActivity extends BaseActivity {
             @Override
             public void onPageSelected(int position) {
                 if (0 == position) {
-                    mMusicBtnVideo.setSelected(false);
-                    mMusicBtnMusic.setSelected(true);
+                    mKaiyan.setSelected(false);
+                    mGank.setSelected(true);
                 } else if (1 == position) {
-                    mMusicBtnMusic.setSelected(false);
-                    mMusicBtnVideo.setSelected(true);
+                    mGank.setSelected(false);
+                    mKaiyan.setSelected(true);
                 }
             }
 
@@ -107,6 +107,6 @@ public class HomeActivity extends BaseActivity {
         homeViewPager.setFragmentList(fragments);
         mViewPage.setAdapter(homeViewPager);
         mViewPage.setCurrentItem(0);
-        mMusicBtnMusic.setSelected(true);
+        mGank.setSelected(true);
     }
 }
