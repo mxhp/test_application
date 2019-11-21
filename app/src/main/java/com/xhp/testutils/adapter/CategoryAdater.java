@@ -1,20 +1,18 @@
 package com.xhp.testutils.adapter;
 
 import android.content.Context;
-import android.util.Log;
+import android.content.Intent;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.Toast;
-
 import com.bumptech.glide.Glide;
 import com.xhp.testutils.R;
 import com.xhp.testutils.bean.Category;
+import com.xhp.testutils.business.WebActvity;
 import com.xhp.testutils.util.DateUtil;
 
-import es.dmoral.toasty.Toasty;
 
 
-public class CategoryAdater extends CommonAdapter4RecyclerView<Category.ResultsBean> implements ListenerWithPosition.OnClickWithPositionListener<CommonHolder4RecyclerView> {
+public class CategoryAdater extends CommonAdapter4RecyclerView<Category.ResultsBean> {
 
 
     public CategoryAdater(Context mContext) {
@@ -31,24 +29,14 @@ public class CategoryAdater extends CommonAdapter4RecyclerView<Category.ResultsB
         } else {
             holder.getView(R.id.iv_item_img).setVisibility(View.GONE);
         }
-//        holder.setOnClickListener(this, R.id.ll_item);
         holder.mConvertView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i("aaaa", "onClick1");
+                Intent intent = new Intent(mContext, WebActvity.class);
+                intent.putExtra(WebActvity.URL_KEY, resultsBean.url);
+                mContext.startActivity(intent);
             }
         });
     }
 
-    @Override
-    public void onClick(View v, int position, CommonHolder4RecyclerView holder) {
-        Log.i("aaa", "onClick");
-        if (mDatas == null || mDatas.get(position) == null) {
-//            Toasty.error(mContext, "数据异常").show();
-            Toast.makeText(mContext, "onclick", Toast.LENGTH_SHORT).show();
-            return;
-        }
-//        Toasty.normal(mContext, "to add").show();
-        Toast.makeText(mContext, "to add", Toast.LENGTH_SHORT).show();
-    }
 }

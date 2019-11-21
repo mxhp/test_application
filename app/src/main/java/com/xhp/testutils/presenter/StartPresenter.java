@@ -14,12 +14,16 @@ public class StartPresenter extends BasePresenter<StartContract.View, StartModel
             getNetEngin().get().getRandomPicture(new BaseEngin.ResultCallBack() {
                 @Override
                 public void onSuccess(Object object) {
-                    mViewRef.get().showStartImage(((Category)object).results.get(0).url);
+                    if (mViewRef!=null&&mViewRef.get()!=null) {
+                        mViewRef.get().showStartImage(((Category) object).results.get(0).url);
+                    }
                 }
 
                 @Override
                 public void onFailed(int code,String message) {
-                    mViewRef.get().showError(code,message);
+                    if (mViewRef!=null&&mViewRef.get()!=null) {
+                        mViewRef.get().showError(code, message);
+                    }
                 }
             });
         }

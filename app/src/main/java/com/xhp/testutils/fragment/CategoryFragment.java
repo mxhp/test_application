@@ -114,7 +114,7 @@ public class CategoryFragment extends BaseFragment<CategoryPresenter> implements
         result.dispatchUpdatesTo(mCategoryAdapter);
         mCategoryAdapter.setDatas(data);
         mRecycleview.loadMoreComplete();
-        Toasty.normal(Objects.requireNonNull(getContext()), "加载成功").show();
+//        Toasty.normal(Objects.requireNonNull(getContext()), "加载成功").show();
     }
 
     @Override

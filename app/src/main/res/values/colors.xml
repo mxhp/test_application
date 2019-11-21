@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#FAFAFA</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorPrimary">#206080</color>
+    <color name="colorPrimaryDark">#206080</color>
+    <color name="colorAccent">#206080</color>
     <color name="colorActivityBackground">#FAFAFA</color>
+
+    <color name="colorTabTextUnSelected">#D3D3D2</color>
+    <color name="colorTabTextSelected">#FDFDFD</color>
+    <color name="colorTabIndicator">#FDFDFD</color>
+
     <color name="colorTextSubTitle">#BDBDBD</color>
     <color name="colorTextBlack">#4B4B4B</color>
     <color name="colorTextPress">#737373</color>
     <color name="colorTextUnEnable">#C1C1C1</color>
     <color name="colorTextEnable">#323232</color>
     <color name="colorTextEnableGary">#9F9F9F</color>
+    <color name="transparent">#00000000</color>
     <drawable name="transparent">#00000000</drawable>
 </resources>
