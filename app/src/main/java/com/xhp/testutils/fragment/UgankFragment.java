@@ -25,7 +25,6 @@ import com.xhp.testutils.util.SharedPreferencesManager;
 import java.util.ArrayList;
 import java.util.List;
 
-import es.dmoral.toasty.Toasty;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -137,13 +136,10 @@ public class UgankFragment extends BaseFragment implements View.OnClickListener 
                 });
                 break;
             case R.id.ll_home_search:
-//                Toasty.info(getContext(), "search").show();
                 break;
             case R.id.iv_home_collection:
-//                Toasty.info(getContext(), "collect").show();
                 break;
             case R.id.iv_home_setting:
-//                Toasty.info(getContext(), "setting").show();
                 break;
 
         }

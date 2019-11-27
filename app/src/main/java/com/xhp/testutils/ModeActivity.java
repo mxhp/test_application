@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.LinearSnapHelper;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 
 import com.xhp.testutils.dialog.SpaceItemDecoration;
 
@@ -39,7 +40,7 @@ public class ModeActivity extends AppCompatActivity implements TestAdater.Onclik
         new LinearSnapHelper().attachToRecyclerView(mModeList);
         testAdater = new TestAdater(mContext);
         testAdater.setOnclikCallBack(this);
-        String[] strings = {"one", "two", "three", "four"};
+        String[] strings = {};
         testAdater.setDatas(Arrays.asList(strings));
         mModeList.setAdapter(testAdater);
         List<String> listNewData = new ArrayList<>();
@@ -50,9 +51,20 @@ public class ModeActivity extends AppCompatActivity implements TestAdater.Onclik
             @Override
             public void run() {
                 testAdater.setDatas(listNewData);
+                testAdater.setIndex(2);
                 testAdater.notifyDataSetChanged();
+//                RecyclerView.ViewHolder holder = mModeList.findViewHolderForAdapterPosition(1);
+//                testAdater.setFocusIndex(holder);
+
+//                testAdater.setIndex(-1);
+//                RecyclerView.ViewHolder holder = mModeList.findViewHolderForAdapterPosition(1);
+//                if (holder!=null) {
+//                    holder.itemView.requestFocusFromTouch();
+//                }else {
+//                    Log.e("jjjjj","holder null");
+//                }
             }
-        }, 10 * 1000);
+        }, 3 * 1000);
     }
 
     @Override
