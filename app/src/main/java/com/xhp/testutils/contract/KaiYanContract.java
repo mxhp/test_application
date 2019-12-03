@@ -1,15 +1,15 @@
 package com.xhp.testutils.contract;
 
 import com.xhp.testutils.bean.Category;
+import com.xhp.testutils.bean.HomeDataBean;
 
 public interface KaiYanContract {
 
     interface View extends BaseContract.BaseView {
-        void loadCategoryData(Category category);
 
-        String getCategoryName();
+        void loadHomeDataHome(HomeDataBean homeDataBean);
 
-        void loadMoreCategoryData(Category category) ;
+        void loadMoreHomeData(HomeDataBean homeDataBean);
 
     }
 

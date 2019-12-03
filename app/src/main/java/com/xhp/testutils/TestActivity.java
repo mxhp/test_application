@@ -6,33 +6,17 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.google.gson.Gson;
-import com.xhp.testutils.bean.Adv;
-import com.xhp.testutils.bean.FindBean;
-import com.xhp.testutils.bean.HotBean;
 import com.xhp.testutils.dialog.ModeDialog;
-import com.xhp.testutils.network.DataManager;
 import com.xhp.testutils.util.AnimatorUtils;
 
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 import es.dmoral.toasty.Toasty;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class TestActivity extends AppCompatActivity {
 
@@ -154,7 +138,6 @@ public class TestActivity extends AppCompatActivity {
         String[] strings = {"one", "two", "three", "four", "five", "one", "two", "three", "four", "five", "one", "two", "three", "four", "five", "one", "two", "three", "four", "five", "one", "two", "three", "four", "five", "one", "two", "three", "four", "five", "one", "two", "three", "four", "five"};
         testAdater.setDatas(Arrays.asList(strings));
         mList.setAdapter(testAdater);
-
     }
 
     //    @Override

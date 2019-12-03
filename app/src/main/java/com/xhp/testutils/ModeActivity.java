@@ -47,11 +47,16 @@ public class ModeActivity extends AppCompatActivity implements TestAdater.Onclik
         listNewData.add("aaa");
         listNewData.add("bbb");
         listNewData.add("ccc");
+        listNewData.add("ddd");
+        listNewData.add("eee");
+        listNewData.add("fff");
+        listNewData.add("ggg");
+        listNewData.add("hhh");
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 testAdater.setDatas(listNewData);
-                testAdater.setIndex(2);
+                testAdater.setIndex(5);
                 testAdater.notifyDataSetChanged();
 //                RecyclerView.ViewHolder holder = mModeList.findViewHolderForAdapterPosition(1);
 //                testAdater.setFocusIndex(holder);

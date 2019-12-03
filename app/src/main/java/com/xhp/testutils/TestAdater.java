@@ -5,17 +5,14 @@ import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
-import android.widget.ImageView;
 
-import com.bumptech.glide.Glide;
-import com.xhp.testutils.adapter.CommonAdapter4RecyclerView;
+import com.xhp.testutils.adapter.CommonSingleTypeAdapter4RecyclerView;
 import com.xhp.testutils.adapter.CommonHolder4RecyclerView;
 import com.xhp.testutils.util.AnimatorUtils;
 
 import de.hdodenhof.circleimageview.CircleImageView;
-import es.dmoral.toasty.Toasty;
 
-public class TestAdater extends CommonAdapter4RecyclerView<String> {
+public class TestAdater extends CommonSingleTypeAdapter4RecyclerView<String> {
     private OnclikCallBack onclikCallBack;
     private int index =-1;
 

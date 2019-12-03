@@ -12,7 +12,7 @@ import com.xhp.testutils.util.DateUtil;
 
 
 
-public class CategoryAdater extends CommonAdapter4RecyclerView<Category.ResultsBean> {
+public class CategoryAdater extends CommonSingleTypeAdapter4RecyclerView<Category.ResultsBean> {
 
 
     public CategoryAdater(Context mContext) {

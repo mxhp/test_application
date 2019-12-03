@@ -9,13 +9,13 @@ import android.view.ViewGroup;
 
 import java.util.List;
 
-public abstract class CommonAdapter4RecyclerView<T> extends RecyclerView.Adapter {
+public abstract class CommonSingleTypeAdapter4RecyclerView<T> extends RecyclerView.Adapter {
     private View mView;
     protected List<T> mDatas;
     private int layoutId;
     public Context mContext;
 
-    public CommonAdapter4RecyclerView(int layoutId, Context mContext) {
+    public CommonSingleTypeAdapter4RecyclerView(int layoutId, Context mContext) {
         this.layoutId = layoutId;
         this.mContext = mContext;
     }

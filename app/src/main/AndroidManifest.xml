@@ -32,18 +32,18 @@
             android:name=".business.PlayerActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait">
-            <!--            <intent-filter>-->
-            <!--                <action android:name="android.intent.action.player" />-->
+<!--                        <intent-filter>-->
+<!--                            <action android:name="android.intent.action.player" />-->
 
-            <!--                <category android:name="android.intent.category.DEFAULT" />-->
-            <!--            </intent-filter>-->
+<!--                            <category android:name="android.intent.category.DEFAULT" />-->
+<!--                        </intent-filter>-->
         </activity>
         <activity android:name=".business.StartActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
         </activity>
         <activity
             android:name=".SurfacePlayerActivity"
