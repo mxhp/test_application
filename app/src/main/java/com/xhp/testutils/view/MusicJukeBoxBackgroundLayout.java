@@ -162,7 +162,7 @@ public class MusicJukeBoxBackgroundLayout extends RelativeLayout {
      * @param blurRadius  虚化的角度
      * @param shadeEnable 是否启用遮罩层图层
      */
-    private synchronized void setBackgroundCover(String imageUrl, long delayMillis, boolean isBlur, int blurRadius, boolean shadeEnable) {
+    public synchronized void setBackgroundCover(String imageUrl, long delayMillis, boolean isBlur, int blurRadius, boolean shadeEnable) {
         if (null != mBackgroundRunnable && !TextUtils.isEmpty(mBackgroundRunnable.getmImageUrl()) &&
                 mBackgroundRunnable.getmImageUrl().equals(imageUrl)) {
             return;

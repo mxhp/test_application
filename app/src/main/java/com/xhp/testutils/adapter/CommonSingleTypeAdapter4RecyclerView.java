@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.xhp.testutils.adapter.viewholder.CommonHolder4RecyclerView;
+
 import java.util.List;
 
 public abstract class CommonSingleTypeAdapter4RecyclerView<T> extends RecyclerView.Adapter {

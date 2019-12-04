@@ -9,6 +9,7 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.text.TextUtils;
 
 public class ImageUtil {
     private static volatile ImageUtil mInstance;
@@ -254,5 +255,17 @@ public class ImageUtil {
         }
         bitmap.setPixels(pix, 0, w, 0, 0, w, h);
         return (bitmap);
+    }
+
+    /**
+     * 去除图片地址的重定向代理
+     * @param url
+     * @return 真实路径
+     */
+    public String formatImageUrl(String url) {
+        if(TextUtils.isEmpty(url)){
+            return url;
+        }
+        return url.substring(0,url.indexOf("?"));
     }
 }

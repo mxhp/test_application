@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.xhp.testutils.R;
+import com.xhp.testutils.adapter.viewholder.CommonHolder4RecyclerView;
 import com.xhp.testutils.bean.Category;
 import com.xhp.testutils.business.WebActvity;
 import com.xhp.testutils.util.DateUtil;

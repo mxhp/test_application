@@ -1,15 +1,16 @@
 package com.xhp.testutils.contract;
 
-import com.xhp.testutils.bean.Category;
-import com.xhp.testutils.bean.HomeDataBean;
+import com.xhp.testutils.bean.OpenEyesIndexItemBean;
+
+import java.util.List;
 
 public interface KaiYanContract {
 
     interface View extends BaseContract.BaseView {
 
-        void loadHomeDataHome(HomeDataBean homeDataBean);
+        void loadHomeDataHome(List<OpenEyesIndexItemBean> data);
 
-        void loadMoreHomeData(HomeDataBean homeDataBean);
+        void loadMoreHomeData(List<OpenEyesIndexItemBean> newData);
 
     }
 

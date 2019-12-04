@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#206080</color>
-    <color name="colorPrimaryDark">#206080</color>
-    <color name="colorAccent">#206080</color>
+    <color name="colorPrimary">#8000FF</color>
+    <color name="colorPrimaryDark">#8000FF</color>
+    <color name="colorAccent">#8000FF</color>
     <color name="colorActivityBackground">#FAFAFA</color>
 
     <color name="colorTabTextUnSelected">#D3D3D2</color>
     <color name="colorTabTextSelected">#FDFDFD</color>
     <color name="colorTabIndicator">#FDFDFD</color>
-
+    <color name="video_style">#8000ff</color>
     <color name="colorTextSubTitle">#BDBDBD</color>
     <color name="colorTextBlack">#4B4B4B</color>
     <color name="colorTextPress">#737373</color>

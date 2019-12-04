@@ -1,4 +1,4 @@
-package com.xhp.testutils.adapter;
+package com.xhp.testutils.adapter.viewholder;
 
 import android.support.annotation.IdRes;
 import android.support.v7.widget.RecyclerView;
@@ -6,6 +6,8 @@ import android.text.TextUtils;
 import android.util.SparseArray;
 import android.view.View;
 import android.widget.TextView;
+
+import com.xhp.testutils.adapter.ListenerWithPosition;
 
 
 public class CommonHolder4RecyclerView extends RecyclerView.ViewHolder {

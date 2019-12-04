@@ -33,4 +33,29 @@
         <attr name="backgroundEnable" format="boolean"/>
     </declare-styleable>
 
+
+    <!--自定义圆角ImageView-->
+    <declare-styleable name="RoundImageView">
+        <attr name="image_type" />
+        <attr name="image_scale" />
+        <attr name="image_borderRadius" />
+        <attr name="image_top_left" />
+        <attr name="image_top_right" />
+        <attr name="image_bottom_left" />
+        <attr name="image_bottom_right" />
+    </declare-styleable>
+    <attr name="image_borderRadius" format="dimension" />
+    <attr name="image_type">
+        <enum name="image_circle" value="0" />
+        <enum name="image_round" value="1" />
+    </attr>
+    <attr name="image_scale">
+        <enum name="image_crop" value="0" />
+        <enum name="image_fit" value="1" />
+    </attr>
+    <attr name="image_top_left" format="boolean" />
+    <attr name="image_top_right" format="boolean" />
+    <attr name="image_bottom_left" format="boolean" />
+    <attr name="image_bottom_right" format="boolean" />
+
 </resources>

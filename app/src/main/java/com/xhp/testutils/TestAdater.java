@@ -7,7 +7,7 @@ import android.util.Log;
 import android.view.View;
 
 import com.xhp.testutils.adapter.CommonSingleTypeAdapter4RecyclerView;
-import com.xhp.testutils.adapter.CommonHolder4RecyclerView;
+import com.xhp.testutils.adapter.viewholder.CommonHolder4RecyclerView;
 import com.xhp.testutils.util.AnimatorUtils;
 
 import de.hdodenhof.circleimageview.CircleImageView;
