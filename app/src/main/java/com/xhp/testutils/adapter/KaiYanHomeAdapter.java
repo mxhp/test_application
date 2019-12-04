@@ -34,7 +34,8 @@ public class KaiYanHomeAdapter extends CommonMutiType4RecyclerView<OpenEyesIndex
     }
 
     @Override
-    protected RecyclerView.ViewHolder CreateViewHolder(ViewGroup viewGroup, int viewType) {
+    protected RecyclerView.ViewHolder CreateViewHolder(ViewGroup viewGroup, int position) {
+        int viewType = mData.get(position).getItemType();
         if (viewType == OpenEyesIndexItemBean.ITEM_CARD) {
             View inflate = mInflater.inflate(R.layout.video_index_video_card, null);
             return new CardBanner(inflate);

@@ -13,6 +13,9 @@ import com.xhp.testutils.contract.KaiYanContract;
 import com.xhp.testutils.presenter.KaiYanPresenter;
 
 import java.util.List;
+import java.util.Objects;
+
+import es.dmoral.toasty.Toasty;
 
 public class KaiyanFragment extends BaseFragment<KaiYanPresenter> implements KaiYanContract.View, KaiYanHomeAdapter.OnItemClickListener {
 
@@ -76,10 +79,28 @@ public class KaiyanFragment extends BaseFragment<KaiYanPresenter> implements Kai
     public void loadMoreHomeData(List<OpenEyesIndexItemBean> newData) {
         mKaiYanHomeAdapter.addData(newData);
         mKaiYanHomeAdapter.notifyDataSetChanged();
+        mRecycleview.loadMoreComplete();
     }
 
     @Override
     public void onItemClick(View view, int posotion, long musicID) {
 
+    }
+
+    @Override
+    public void showError(int code, String errorMsg) {
+        super.showError(code, errorMsg);
+        mRecycleview.reset();
+        Toasty.error(Objects.requireNonNull(getContext()), "加载数据失败,请稍后再试!").show();
+    }
+
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if (mRecycleview != null) {
+            mRecycleview.destroy();
+            mRecycleview = null;
+        }
     }
 }

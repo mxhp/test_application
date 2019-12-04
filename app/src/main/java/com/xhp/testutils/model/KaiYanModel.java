@@ -11,11 +11,11 @@ import retrofit2.Response;
 
 public class KaiYanModel extends BaseEngin {
     public void getHomeData(int page, BaseEngin.ResultCallBack resultCallBack) {
-        DataManager.getKaiYanApi().getHomeData(page).enqueue(new Callback<OpenEyesIndexInfo>() {
+        DataManager.getKaiYanApi().getHomeData(page, "26868b32e808498db32fd51fb422d00175e179df", "83").enqueue(new Callback<OpenEyesIndexInfo>() {
             @Override
             public void onResponse(Call<OpenEyesIndexInfo> call, Response<OpenEyesIndexInfo> response) {
                 if (resultCallBack != null) {
-                    resultCallBack.onSuccess(response);
+                    resultCallBack.onSuccess(response.body());
                 }
             }
 

@@ -14,8 +14,8 @@ import retrofit2.http.Query;
 public interface KaiYanApi {
 
     //获取首页第一页数据
-    @GET("v5/index/tab/allRec?page={page}&udid=26868b32e808498db32fd51fb422d00175e179df&vc=83")
-    Call<OpenEyesIndexInfo> getHomeData(@Query("page") int page);
+    @GET("v5/index/tab/allRec")
+    Call<OpenEyesIndexInfo> getHomeData(@Query("page") int page,@Query("udid") String uid,@Query("vc")String vc);
 
     //首页更多
     //    @GET("v2/feed?date={date}&num={num}")

@@ -11,7 +11,7 @@ public class VideoTitleViewHolder extends RecyclerView.ViewHolder {
 
     public TextView textTitle;
     public TextView textTitle2;
-    public View rootTitle,rootTitle1;
+    public View rootTitle, rootTitle1;
 
     public VideoTitleViewHolder(View itemView) {
         super(itemView);
