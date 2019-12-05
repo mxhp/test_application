@@ -1,7 +1,5 @@
 package com.xhp.testutils.model;
 
-import com.xhp.testutils.R;
-import com.xhp.testutils.bean.Category;
 import com.xhp.testutils.bean.OpenEyesIndexInfo;
 import com.xhp.testutils.network.DataManager;
 
@@ -11,7 +9,7 @@ import retrofit2.Response;
 
 public class KaiYanModel extends BaseEngin {
     public void getHomeData(int page, BaseEngin.ResultCallBack resultCallBack) {
-        DataManager.getKaiYanApi().getHomeData(page, "26868b32e808498db32fd51fb422d00175e179df", "83").enqueue(new Callback<OpenEyesIndexInfo>() {
+        DataManager.getKaiYanApi().getHomeData(page, "26868b32e808498db32fd51fb422d00175e179df").enqueue(new Callback<OpenEyesIndexInfo>() {
             @Override
             public void onResponse(Call<OpenEyesIndexInfo> call, Response<OpenEyesIndexInfo> response) {
                 if (resultCallBack != null) {

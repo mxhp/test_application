@@ -6,6 +6,7 @@ import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewOutlineProvider;
 import android.widget.FrameLayout;
@@ -15,15 +16,15 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.xhp.testutils.R;
 import com.xhp.testutils.bean.OpenEyesIndexItemBean;
+import com.xhp.testutils.util.DisplayUtils;
 
 public class TransformerMoiveItem extends FrameLayout {
 
     private ImageView mRoundImageView;
 
-    public void setData(OpenEyesIndexItemBean data) {
-        this.item = data;
+    public void setData(OpenEyesIndexItemBean item) {
         if (null != item && null != item.getData()) {
-//            OpenEyesIndexItemBean data = item.getData().getContent().getData();
+            OpenEyesIndexItemBean data = item.getData().getContent().getData();
 //            TextView tvDurtion = (TextView) findViewById(R.id.music_tr_item_durtion);
 //            tvDurtion.setText(MusicUtils.getInstance().stringForAudioTime(data.getDuration()*1000));
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
@@ -33,12 +34,11 @@ public class TransformerMoiveItem extends FrameLayout {
 
                             @Override
                             public void getOutline(View view, Outline outline) {
-                                outline.setRoundRect(0, 0, view.getWidth(), view.getHeight(), 8);
+                                outline.setRoundRect(0, 0, view.getWidth(), view.getHeight(), DisplayUtils.dp2px(8, getContext()));
                                 view.setClipToOutline(true);
                             }
                         });
             }
-            mRoundImageView = (ImageView) findViewById(R.id.music_tr_item_cover);
             Glide.with(getContext())
                     .load(data.getCover().getFeed())
                     .placeholder(R.drawable.ic_video_default_cover)
@@ -63,8 +63,6 @@ public class TransformerMoiveItem extends FrameLayout {
         }
     }
 
-    private OpenEyesIndexItemBean item;
-
     public TransformerMoiveItem(@NonNull Context context) {
         this(context, null);
     }
@@ -72,6 +70,7 @@ public class TransformerMoiveItem extends FrameLayout {
     public TransformerMoiveItem(@NonNull Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         View.inflate(context, R.layout.video_pager_item, this);
+        mRoundImageView = (ImageView) findViewById(R.id.music_tr_item_cover);
     }
 
     public void onDestroy() {

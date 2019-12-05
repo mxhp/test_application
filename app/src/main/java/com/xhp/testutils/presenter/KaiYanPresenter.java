@@ -1,5 +1,7 @@
 package com.xhp.testutils.presenter;
 
+import android.util.Log;
+
 import com.xhp.testutils.bean.OpenEyesIndexInfo;
 import com.xhp.testutils.bean.OpenEyesIndexItemBean;
 import com.xhp.testutils.contract.KaiYanContract;
@@ -19,42 +21,40 @@ public class KaiYanPresenter extends BasePresenter<KaiYanContract.View, KaiYanMo
     @Override
     public void getHomeData(boolean isFresh) {
         if (isFresh) {
-            page = 1;
+            page = 0;
         } else {
             page++;
         }
-        if (mNetEnginRef != null && mNetEnginRef.get() != null) {
-            getNetEngin().get().getHomeData(page, new BaseEngin.ResultCallBack() {
-                @Override
-                public void onSuccess(Object o) {
-                    if (mViewRef != null && mViewRef.get() != null) {
-                        if (o != null) {
-                            OpenEyesIndexInfo openEyesIndexInfo = (OpenEyesIndexInfo) o;
-                            if (isFresh) {
-                                if (openEyesIndexInfo.getItemList() == null) {
-                                    mViewRef.get().loadHomeDataHome(new ArrayList<OpenEyesIndexItemBean>());
-                                } else {
-                                    mViewRef.get().loadHomeDataHome(openEyesIndexInfo.getItemList());
-                                }
+        getNetEngin().get().getHomeData(page, new BaseEngin.ResultCallBack() {
+            @Override
+            public void onSuccess(Object o) {
+                if (mViewRef != null && mViewRef.get() != null) {
+                    if (o != null) {
+                        OpenEyesIndexInfo openEyesIndexInfo = (OpenEyesIndexInfo) o;
+                        if (isFresh) {
+                            if (openEyesIndexInfo.getItemList() == null) {
+                                mViewRef.get().loadHomeDataHome(new ArrayList<OpenEyesIndexItemBean>());
                             } else {
-                                if (openEyesIndexInfo.getItemList() == null) {
-                                    mViewRef.get().loadMoreHomeData(new ArrayList<OpenEyesIndexItemBean>());
-                                } else {
-                                    mViewRef.get().loadMoreHomeData(openEyesIndexInfo.getItemList());
-                                }
+                                mViewRef.get().loadHomeDataHome(openEyesIndexInfo.getItemList());
+                            }
+                        } else {
+                            if (openEyesIndexInfo.getItemList() == null) {
+                                mViewRef.get().loadMoreHomeData(new ArrayList<OpenEyesIndexItemBean>());
+                            } else {
+                                mViewRef.get().loadMoreHomeData(openEyesIndexInfo.getItemList());
                             }
                         }
                     }
-
                 }
 
-                @Override
-                public void onFailed(int code, String message) {
-                    if (mViewRef != null && mViewRef.get() != null) {
-                        mViewRef.get().showError(code, message);
-                    }
+            }
+
+            @Override
+            public void onFailed(int code, String message) {
+                if (mViewRef != null && mViewRef.get() != null) {
+                    mViewRef.get().showError(code, message);
                 }
-            });
-        }
+            }
+        });
     }
 }

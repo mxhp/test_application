@@ -26,6 +26,10 @@ public class TransformerVideoPager extends RelativeLayout {
     private TransformerViewpager mAdapter;
     private List<OpenEyesIndexItemBean> mDataBeans;
 
+    public TransformerVideoPager(Context context) {
+        this(context, null);
+    }
+
     public TransformerVideoPager(Context context, AttributeSet attrs) {
         super(context, attrs);
         View.inflate(context, R.layout.video_pager_transforme, this);
@@ -33,6 +37,7 @@ public class TransformerVideoPager extends RelativeLayout {
         findViewById(R.id.view_empty).getLayoutParams().height = emptyHeight;
         mViewPager = (ViewPager) findViewById(R.id.view_item_pager);
         mAdapter = new TransformerViewpager();
+        mViewPager.setAdapter(mAdapter);
         mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int i, float v, int i1) {
@@ -82,9 +87,6 @@ public class TransformerVideoPager extends RelativeLayout {
         }
     }
 
-    public void setmDataBeans(List<OpenEyesIndexItemBean> mDataBeans) {
-        this.mDataBeans = mDataBeans;
-    }
 
     private class TransformerViewpager extends PagerAdapter {
 
@@ -134,28 +136,29 @@ public class TransformerVideoPager extends RelativeLayout {
 
     /**
      * 更新data
-     * @param data 源数据
+     *
+     * @param data          源数据
      * @param fiexdPosition 默认显示位置
      */
     public void setDatas(List<OpenEyesIndexItemBean> data, int fiexdPosition) {
-        if(null!= mAdapter &&null!= mAdapter){
-            if(null!=mDataBeans){
+        if (null != mAdapter && null != mAdapter) {
+            if (null != mDataBeans) {
                 mDataBeans.clear();
             }
-            if(null==mDataBeans) mDataBeans=new ArrayList<>();
+            if (null == mDataBeans) mDataBeans = new ArrayList<>();
             mDataBeans.addAll(data);
             //在finishUpdate中实现无限循环的时，需将此值设置为data.size()+2,
             //以免finishUpdate中设置了setCurrentItem之后ViewPager的Item不加载
-            mViewPager.setOffscreenPageLimit(data.size()+2);
+            mViewPager.setOffscreenPageLimit(data.size() + 2);
             mAdapter.notifyDataSetChanged();
-            if(data.size()>fiexdPosition){
+            if (data.size() > fiexdPosition) {
                 mViewPager.setCurrentItem(fiexdPosition);
             }
         }
         //更新Banner背景
-        if(data.size()>fiexdPosition){
+        if (data.size() > fiexdPosition) {
             setPagerData(fiexdPosition);
-        }else{
+        } else {
             setPagerData(0);
         }
     }

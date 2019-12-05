@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.music.player.lib.view.MusicJukeBoxBackgroundLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.xhp.testutils.view.MusicJukeBoxBackgroundLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/background_view"
     android:layout_width="match_parent"
@@ -24,7 +25,7 @@
             android:gravity="center">
 
             <android.support.v4.view.ViewPager
-                android:id ="@+id/view_item_pager"
+                android:id="@+id/view_item_pager"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
         </RelativeLayout>
@@ -73,4 +74,4 @@
                 android:textStyle="italic" />
         </LinearLayout>
     </LinearLayout>
-</com.music.player.lib.view.MusicJukeBoxBackgroundLayout>
+</com.xhp.testutils.view.MusicJukeBoxBackgroundLayout>

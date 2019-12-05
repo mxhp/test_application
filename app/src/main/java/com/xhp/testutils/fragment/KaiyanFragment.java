@@ -98,6 +98,7 @@ public class KaiyanFragment extends BaseFragment<KaiYanPresenter> implements Kai
     @Override
     public void onDestroy() {
         super.onDestroy();
+        Toasty.error(getContext(), "on Destory!").show();
         if (mRecycleview != null) {
             mRecycleview.destroy();
             mRecycleview = null;

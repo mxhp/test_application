@@ -34,8 +34,7 @@ public class KaiYanHomeAdapter extends CommonMutiType4RecyclerView<OpenEyesIndex
     }
 
     @Override
-    protected RecyclerView.ViewHolder CreateViewHolder(ViewGroup viewGroup, int position) {
-        int viewType = mData.get(position).getItemType();
+    protected RecyclerView.ViewHolder CreateViewHolder(ViewGroup viewGroup, int viewType) {
         if (viewType == OpenEyesIndexItemBean.ITEM_CARD) {
             View inflate = mInflater.inflate(R.layout.video_index_video_card, null);
             return new CardBanner(inflate);
@@ -61,7 +60,7 @@ public class KaiYanHomeAdapter extends CommonMutiType4RecyclerView<OpenEyesIndex
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int position) {
         viewHolder.itemView.setTag(null);
-        int itemViewType = getItemType(position);
+        int itemViewType = getItemViewType(position);
         OpenEyesIndexItemBean itemData = getItemData(position);
         if (null != itemData) {
             //精品推荐
@@ -218,13 +217,6 @@ public class KaiYanHomeAdapter extends CommonMutiType4RecyclerView<OpenEyesIndex
         return mData.get(position);
     }
 
-    public int getItemType(int position) {
-        if (getData() != null) {
-            return getData().get(position).getItemType();
-        }
-        return OpenEyesIndexItemBean.ITEM_UNKNOWN;
-    }
-
     public interface OnMenuClickListener {
         void onMenuClick(View itemView, View view);
     }
@@ -239,4 +231,11 @@ public class KaiYanHomeAdapter extends CommonMutiType4RecyclerView<OpenEyesIndex
         void onItemClick(View view, int posotion, long musicID);
     }
 
+    @Override
+    public int getItemViewType(int position) {
+        if (getData() != null) {
+            return getData().get(position).getItemType();
+        }
+        return OpenEyesIndexItemBean.ITEM_UNKNOWN;
+    }
 }
