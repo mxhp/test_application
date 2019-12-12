@@ -1,8 +1,11 @@
 package com.xhp.testutils.fragment;
 
 import android.support.v7.widget.LinearLayoutManager;
+import android.util.Log;
 import android.view.View;
 
+import com.dueeeke.videoplayer.player.VideoView;
+import com.dueeeke.videoplayer.player.VideoViewManager;
 import com.jcodecraeer.xrecyclerview.ProgressStyle;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import com.xhp.testutils.R;
@@ -84,7 +87,8 @@ public class KaiyanFragment extends BaseFragment<KaiYanPresenter> implements Kai
 
     @Override
     public void onItemClick(View view, int posotion, long musicID) {
-
+        OpenEyesIndexItemBean openEyesIndexItemBean = mKaiYanHomeAdapter.getData().get(posotion);
+        Log.d("onItemClick", "position =" + posotion);
     }
 
     @Override
@@ -98,10 +102,16 @@ public class KaiyanFragment extends BaseFragment<KaiYanPresenter> implements Kai
     @Override
     public void onDestroy() {
         super.onDestroy();
-        Toasty.error(getContext(), "on Destory!").show();
         if (mRecycleview != null) {
             mRecycleview.destroy();
             mRecycleview = null;
         }
+    }
+
+    @Override
+    protected void onInvisible() {
+        super.onInvisible();
+//        if (VideoViewManager.instance().();)
+        VideoViewManager.instance().pause();
     }
 }

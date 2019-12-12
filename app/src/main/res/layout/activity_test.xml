@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorAccent"
     tools:context=".TestActivity">
 
     <Button
@@ -13,6 +12,7 @@
         android:layout_height="40dp"
         android:onClick="find"
         android:text="find"
+        android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -22,6 +22,7 @@
         android:layout_height="40dp"
         android:onClick="search"
         android:text="search"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="@+id/find"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/find" />
@@ -32,6 +33,7 @@
         android:layout_height="wrap_content"
         android:background="@color/colorPrimaryDark"
         android:minHeight="200dp"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -42,6 +44,7 @@
         android:layout_height="73dp"
         android:focusable="true"
         android:src="@mipmap/ic_launcher_round"
+        android:visibility="gone"
         app:civ_border_color="#00000000"
         app:civ_border_overlay="true"
         app:civ_border_width="1dp"
@@ -58,5 +61,14 @@
         app:layout_constraintEnd_toEndOf="@+id/circle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/circle" />
+
+    <com.xhp.testutils.view.PaintTestView
+        android:id="@+id/hehe"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

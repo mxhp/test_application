@@ -16,5 +16,6 @@
     <color name="colorTextEnable">#323232</color>
     <color name="colorTextEnableGary">#9F9F9F</color>
     <color name="transparent">#00000000</color>
+    <color name="cyan">#1F00FFFF</color>
     <drawable name="transparent">#00000000</drawable>
 </resources>
